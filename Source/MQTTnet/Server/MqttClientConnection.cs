@@ -1,4 +1,4 @@
-﻿using MQTTnet.Adapter;
+using MQTTnet.Adapter;
 using MQTTnet.Client;
 using MQTTnet.Diagnostics;
 using MQTTnet.Exceptions;
@@ -426,7 +426,7 @@ namespace MQTTnet.Server
                             return;
                         }
 
-                        publishPacket.Topic = context.ApplicationMessage.Topic;
+                        publishPacket.Topic = context.RewriteTopic ?? context.ApplicationMessage.Topic;
                         publishPacket.Payload = context.ApplicationMessage.Payload;
                         publishPacket.QualityOfServiceLevel = context.SubscriptionQualityOfServiceLevel;
                     }

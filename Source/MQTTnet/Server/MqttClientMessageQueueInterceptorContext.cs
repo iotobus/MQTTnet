@@ -1,4 +1,4 @@
-﻿using MQTTnet.Protocol;
+using MQTTnet.Protocol;
 
 namespace MQTTnet.Server
 {
@@ -19,6 +19,8 @@ namespace MQTTnet.Server
         public MqttApplicationMessage ApplicationMessage { get; set; }
 
         public bool AcceptEnqueue { get; set; } = true;
+
+        public string RewriteTopic { get; set; }
 
         /// <summary>
         /// Gets or sets the supscription quality of service level.
